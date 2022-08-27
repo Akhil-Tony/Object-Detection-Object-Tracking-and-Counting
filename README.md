@@ -25,6 +25,8 @@ python object_tracker.py
 
 ![](https://github.com/Akhil-Tony/Object-Detection-Object-Tracking-and-Counting/blob/master/track_3.gif)
 
+## Observations 
+
 ## References
 1. Deep SORT Repository - https://github.com/anushkadhiman/ObjectTracking-DeepSORT-YOLOv3-TF2
 
