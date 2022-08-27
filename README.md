@@ -1,10 +1,10 @@
 # Object-Detection-Object-Tracking-and-Counting
 
-This repository implements YOLOv3 and Deep SORT in order to perform real-time object tracking.
+This repository implements YOLOv3 and Deep SORT in order to perform real-time object tracking and counting.
 
 ## Installation
 
-First, clone or download this GitHub repository. Install requirements.
+First, clone this GitHub repository. Install requirements.
 
 Then download pretrained weights and place is to model_data directory:
 ```
