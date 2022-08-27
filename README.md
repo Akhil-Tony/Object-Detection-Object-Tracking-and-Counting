@@ -21,7 +21,7 @@ python object_tracker.py
 ## Result
 
 ### Tracking and Counting
-![Alt text](tracking.gif?raw=true "video")
+![](https://github.com/Akhil-Tony/Object-Detection-Object-Tracking-and-Counting/blob/master/track_1.gif)
 
 ## References
 1. Deep SORT Repository - https://github.com/anushkadhiman/ObjectTracking-DeepSORT-YOLOv3-TF2
