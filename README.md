@@ -23,13 +23,9 @@ python object_tracker.py
 ![](https://github.com/Akhil-Tony/Object-Detection-Object-Tracking-and-Counting/blob/master/track_3.gif)
 
 ## Observations 
-
+### Video 1
+- cars are misclassified as trucks
+### Video 3
+- false tracking bounding box for objects
 ## References
 1. Deep SORT Repository - https://github.com/anushkadhiman/ObjectTracking-DeepSORT-YOLOv3-TF2
-
-
-
-
-
-
-
