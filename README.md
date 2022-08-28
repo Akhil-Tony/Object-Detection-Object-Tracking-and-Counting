@@ -2,7 +2,7 @@
 
 This repository implements YOLOv3 and Deep SORT in order to perform real-time object tracking and counting.
 
-![](https://www.researchgate.net/figure/Architecture-of-Deep-SORT-Simple-online-and-real-time-tracking-with-deep-association_fig2_353256407)
+![](https://www.researchgate.net/publication/353256407/figure/fig2/AS:1045653165715457@1626314550831/Architecture-of-Deep-SORT-Simple-online-and-real-time-tracking-with-deep-association.jpg)
 
 ## Installation
 
