@@ -25,9 +25,7 @@ python object_tracker.py
 ![](https://github.com/Akhil-Tony/Object-Detection-Object-Tracking-and-Counting/blob/master/track_3.gif)
 
 ## Observations
-### Video 1
 __Some cars are misclassified as trucks, Training the classifier backbone with more data containing cars and trucks may help.__
-### Video 3
 __Few false tracking box are predicted__
 ## References
 1. Deep SORT Repository - https://github.com/anushkadhiman/ObjectTracking-DeepSORT-YOLOv3-TF2
