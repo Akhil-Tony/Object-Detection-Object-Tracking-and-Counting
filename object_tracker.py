@@ -14,7 +14,7 @@ from deep_sort import generate_detections as gdet
 
 from deep_sort.counter import Count # custom module to count objects
 
-video_path   = "video_3.mp4"
+video_path   = "video_1.mp4"
 
 def Object_tracking(Yolo, video_path, output_path, input_size=416, show=False, CLASSES=YOLO_COCO_CLASSES, score_threshold=0.6, iou_threshold=0.45, rectangle_colors='', Track_only = []):
 
@@ -48,7 +48,7 @@ def Object_tracking(Yolo, video_path, output_path, input_size=416, show=False, C
     
     # For counting
     object_set = set() # set to keep track of unique vehicles in frame
-    object_count = {"car":0,"truck":0,"bus":0,"bike":0,"person":0} # to store count for each category
+    object_count = {"car":0,"truck":0,"bus":0,"bike":0,"person":0} # to store count for each category, initialized with 0
     if video_path == 'video_1.mp4': # for adjusting border line for the road
         scale = .5 
     else:
