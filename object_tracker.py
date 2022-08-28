@@ -12,7 +12,7 @@ from deep_sort.detection import Detection
 from deep_sort.tracker import Tracker
 from deep_sort import generate_detections as gdet
 
-from deep_sort.counter import Count
+from deep_sort.counter import Count # custom module to count objects
 
 video_path   = "video_3.mp4"
 
@@ -47,14 +47,14 @@ def Object_tracking(Yolo, video_path, output_path, input_size=416, show=False, C
     val_list = list(NUM_CLASS.values())
     
     # For counting
-    object_set = set()
-    object_count = {"car":0,"truck":0,"bus":0,"bike":0,"person":0}
-    if video_path == 'video_1.mp4':
-        scale = .5
+    object_set = set() # set to keep track of unique vehicles in frame
+    object_count = {"car":0,"truck":0,"bus":0,"bike":0,"person":0} # to store count for each category
+    if video_path == 'video_1.mp4': # for adjusting border line for the frames
+        scale = .5 
     else:
         scale = .2
     
-    C = Count(scale)
+    C = Count(scale) # initializing counting class
     
     while True:
         _, frame = vid.read()
@@ -129,15 +129,17 @@ def Object_tracking(Yolo, video_path, output_path, input_size=416, show=False, C
         # Counting
         
         ob_count,ob_set = C.get_count(original_frame.shape, tracked_bboxes, object_set, object_count)
-        object_set = ob_set
-        object_count = ob_count
+        object_set = ob_set # updating the vehicle set
+        object_count = ob_count # updating the category count
         
+        '''displaying counts in frames'''
         cv2.putText(image, "car: "+str(object_count["car"]), (10, 320), cv2.FONT_HERSHEY_COMPLEX_SMALL, 1, (0, 255, 0), 2)
         cv2.putText(image, "truck: "+str(object_count["truck"]), (10, 350), cv2.FONT_HERSHEY_COMPLEX_SMALL, 1, (0, 255, 0), 2)
         cv2.putText(image, "bus: "+str(object_count["bus"]), (10, 380), cv2.FONT_HERSHEY_COMPLEX_SMALL, 1, (0, 255, 0), 2)
         cv2.putText(image, "bike: "+str(object_count["bike"]), (10, 410), cv2.FONT_HERSHEY_COMPLEX_SMALL, 1, (0, 255, 0), 2)
         cv2.putText(image, "person: "+str(object_count["person"]), (10, 440), cv2.FONT_HERSHEY_COMPLEX_SMALL, 1, (0, 255, 0), 2)
         
+        # drawing border line on frames
         frame_height,frame_width,_ = original_frame.shape
         cv2.line(image,(0,int(frame_height*scale)),(frame_width,int(frame_height*scale)),(255,0,0),1)
         
