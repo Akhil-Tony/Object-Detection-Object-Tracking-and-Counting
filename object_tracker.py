@@ -12,7 +12,7 @@ from deep_sort.detection import Detection
 from deep_sort.tracker import Tracker
 from deep_sort import generate_detections as gdet
 
-from deep_sort.counter import get_count
+from deep_sort.counter import Count
 
 video_path   = "video_3.mp4"
 
@@ -49,6 +49,12 @@ def Object_tracking(Yolo, video_path, output_path, input_size=416, show=False, C
     # For counting
     object_set = set()
     object_count = {"car":0,"truck":0,"bus":0,"bike":0,"person":0}
+    if video_path == 'video_1.mp4':
+        scale = .5
+    else:
+        scale = .2
+    
+    C = Count(scale)
     
     while True:
         _, frame = vid.read()
@@ -121,11 +127,8 @@ def Object_tracking(Yolo, video_path, output_path, input_size=416, show=False, C
         
         
         # Counting
-        if video_path == 'video_1.mp4':
-            scale = .5
-        else:
-            scale = .2
-        ob_count,ob_set = get_count(original_frame, tracked_bboxes, object_set, object_count, scale=scale)
+        
+        ob_count,ob_set = C.get_count(original_frame.shape, tracked_bboxes, object_set, object_count)
         object_set = ob_set
         object_count = ob_count
         
@@ -135,7 +138,6 @@ def Object_tracking(Yolo, video_path, output_path, input_size=416, show=False, C
         cv2.putText(image, "bike: "+str(object_count["bike"]), (10, 410), cv2.FONT_HERSHEY_COMPLEX_SMALL, 1, (0, 255, 0), 2)
         cv2.putText(image, "person: "+str(object_count["person"]), (10, 440), cv2.FONT_HERSHEY_COMPLEX_SMALL, 1, (0, 255, 0), 2)
         
-        # Counting
         frame_height,frame_width,_ = original_frame.shape
         cv2.line(image,(0,int(frame_height*scale)),(frame_width,int(frame_height*scale)),(255,0,0),1)
         
@@ -164,7 +166,6 @@ def Object_tracking(Yolo, video_path, output_path, input_size=416, show=False, C
                 break
             
     cv2.destroyAllWindows()
-
 
 yolo = Load_Yolo_model()
 Object_tracking(yolo, video_path, "track_1.mp4", input_size=YOLO_INPUT_SIZE, show=True, iou_threshold=0.1, rectangle_colors=(255,0,0), Track_only = ["car","truck","bus","bike","person"])
