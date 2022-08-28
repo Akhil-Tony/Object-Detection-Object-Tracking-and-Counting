@@ -6,7 +6,7 @@ This repository implements YOLOv3 and Deep SORT in order to perform real-time ob
 
 First, clone this GitHub repository. Install requirements.
 
-Then download pretrained weights and place is to model_data directory:
+Then download pretrained weights and place it to model_data directory:
 ```
 # yolov3
 wget -P model_data https://pjreddie.com/media/files/yolov3.weights
