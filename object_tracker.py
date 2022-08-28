@@ -128,7 +128,7 @@ def Object_tracking(Yolo, video_path, output_path, input_size=416, show=False, C
         
         # Counting
         
-        ob_count,ob_set = C.get_count(original_frame.shape, tracked_bboxes, object_set, object_count)
+        ob_count,ob_set = C.get_count(original_frame.shape, tracked_bboxes, object_set, object_count) # function to count
         object_set = ob_set # updating the vehicle set
         object_count = ob_count # updating the category count
         
