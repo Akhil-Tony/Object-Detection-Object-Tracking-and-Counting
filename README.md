@@ -22,9 +22,10 @@ python object_tracker.py
 ![](https://github.com/Akhil-Tony/Object-Detection-Object-Tracking-and-Counting/blob/master/track_1.gif) 
 ![](https://github.com/Akhil-Tony/Object-Detection-Object-Tracking-and-Counting/blob/master/track_3.gif)
 
-## Observations 
+## Observations
 ### Video 1
 - some cars are misclassified as trucks
+Training the classifier backbone with more data containing cars and trucks
 ### Video 3
 - few false tracking bounding box for objects
 ## References
