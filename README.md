@@ -19,9 +19,7 @@ python object_tracker.py
 ````
 
 ## Result
-__video 1__
 ![](https://github.com/Akhil-Tony/Object-Detection-Object-Tracking-and-Counting/blob/master/track_1.gif) 
-__video 3__
 ![](https://github.com/Akhil-Tony/Object-Detection-Object-Tracking-and-Counting/blob/master/track_3.gif)
 
 ## Observations 
