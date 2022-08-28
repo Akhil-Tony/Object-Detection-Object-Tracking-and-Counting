@@ -1,4 +1,4 @@
-# Object-Detection-Object-Tracking-and-Counting
+# Object-Tracking and Counting using Deep Sort
 
 This repository implements YOLOv3 and Deep SORT in order to perform real-time object tracking and counting.
 
