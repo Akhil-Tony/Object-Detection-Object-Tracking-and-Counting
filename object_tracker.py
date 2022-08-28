@@ -49,7 +49,7 @@ def Object_tracking(Yolo, video_path, output_path, input_size=416, show=False, C
     # For counting
     object_set = set() # set to keep track of unique vehicles in frame
     object_count = {"car":0,"truck":0,"bus":0,"bike":0,"person":0} # to store count for each category, initialized with 0
-    if video_path == 'video_1.mp4': # for adjusting border line for the road
+    if video_path == 'video_1.mp4': # for adjusting crossing line for the road
         scale = .5 
     else:
         scale = .2
@@ -139,7 +139,7 @@ def Object_tracking(Yolo, video_path, output_path, input_size=416, show=False, C
         cv2.putText(image, "bike: "+str(object_count["bike"]), (10, 410), cv2.FONT_HERSHEY_COMPLEX_SMALL, 1, (0, 255, 0), 2)
         cv2.putText(image, "person: "+str(object_count["person"]), (10, 440), cv2.FONT_HERSHEY_COMPLEX_SMALL, 1, (0, 255, 0), 2)
         
-        # drawing border line on frames
+        # drawing crossing line on frames
         frame_height,frame_width,_ = original_frame.shape
         cv2.line(image,(0,int(frame_height*scale)),(frame_width,int(frame_height*scale)),(255,0,0),1)
         
