@@ -27,6 +27,5 @@ python object_tracker.py
 ## Thoughts
 1. Training the yolo classifier backbone with additional data of cars and trucks will help 
 reduce the misclassification between car and truck.
-2. Few false tracking box are predicted
 ## References
 1. Deep SORT Repository - https://github.com/anushkadhiman/ObjectTracking-DeepSORT-YOLOv3-TF2
